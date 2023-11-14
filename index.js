@@ -1,4 +1,4 @@
-var finances = [
+let finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -86,4 +86,21 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+let totalMonths = finances.length;
+let totalSum = 0;
+let netTotal = 0;
+let averageChanges = 0;
+let netChangeTotal = 0;
+
+
+for(let row = 0; row < finances.length; row++){
+  for (let column = 0; column < finances[row].length; column++){
+    
+    if (typeof finances[row][column] !== 'string') {
+      totalSum += finances[row][column];
+    }
+  }
+}
+
 

@@ -1,4 +1,4 @@
-let finances = [
+let monthlyFinances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -86,21 +86,50 @@ let finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+// Please Note: I change the variable names so that the code makes sense when reading through.
 
-let totalMonths = finances.length;
-let totalSum = 0;
-let netTotal = 0;
-let averageChanges = 0;
+console.log('Financial Analysis');
+console.log('-------------------');
+
+let totalMonths = monthlyFinances.length;
+
+console.log("The Total Months: " + totalMonths);
+
+let netProfitsLosses = 0;
+
+for (let i = 0; i < totalMonths; i++) {
+    netProfitsLosses += monthlyFinances[i][1];
+}
+console.log("The Net Total Amount Profit/Losses: " + netProfitsLosses);
+
 let netChangeTotal = 0;
+let greatestIncreaseDate = monthlyFinances[0][0];
+let greatestIncreaseAmount = 0;
+let greatestDecreaseDate = monthlyFinances[0][0];
+let greatestDecreaseAmount = 0;
 
+for (let i = 1; i < monthlyFinances.length; i++) { 
+  let currentProfit = monthlyFinances[i][1];
+  let previousProfit = monthlyFinances[i - 1][1];
+  let changeInProfits = currentProfit - previousProfit;
+  netChangeTotal += changeInProfits;
 
-for(let row = 0; row < finances.length; row++){
-  for (let column = 0; column < finances[row].length; column++){
-    
-    if (typeof finances[row][column] !== 'string') {
-      totalSum += finances[row][column];
+  if (changeInProfits > greatestIncreaseAmount) {
+    greatestIncreaseDate = monthlyFinances[i][0];
+    greatestIncreaseAmount = changeInProfits;
+  } else if (changeInProfits < greatestDecreaseAmount) {
+    greatestDecreaseDate = monthlyFinances[i][0];
+    greatestDecreaseAmount = changeInProfits;
     }
-  }
 }
 
+let averageChanges = (netChangeTotal / (monthlyFinances.length - 1)).toFixed(2);
+// let average = netChangeTotal / (monthlyFinances.length - 1);
+// let averageChanges = average.toFixed(2);
+// let averageChanges = Math.round((netChangeTotal / 86) * 100) / 100;
 
+console.log("The Total Months: " + averageChanges);
+console.log(`Greatest increase in Profits/ Losses in ${greatestIncreaseDate}: was ($${greatestIncreaseAmount});`);
+console.log(`Greatest decrease in Profits/ Losses in ${greatestDecreaseDate}: was ($${greatestDecreaseAmount});`); 
+
+// End of Code

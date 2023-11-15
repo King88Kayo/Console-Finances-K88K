@@ -18,6 +18,10 @@ The greatest decrease in losses (date and amount) over the entire period
 
 Here is a link to the GitPages for this challenge: [Console-Finances-K88K](https://king88kayo.github.io/Console-Finances-K88K/)
 
+Here is a screenshotof my work:
+
+![](images/workc4cf.jpg)
+
 # Resources
 
 Andrew Hoang's Zoom Meeting - https://tinyurl.com/345m8ezy

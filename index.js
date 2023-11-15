@@ -126,7 +126,7 @@ for (let i = 1; i < monthlyFinances.length; i++) {
 let averageChanges = (netChangeTotal / (monthlyFinances.length - 1)).toFixed(2);
 // let average = netChangeTotal / (monthlyFinances.length - 1);
 // let averageChanges = average.toFixed(2);
-// let averageChanges = Math.round((netChangeTotal / 86) * 100) / 100;
+// let averageChanges = Math.round((netChangeTotal / 86) * 100) / 100; (This did not work)
 
 console.log("The Total Months: " + averageChanges);
 console.log(`Greatest increase in Profits/ Losses in ${greatestIncreaseDate}: was ($${greatestIncreaseAmount});`);

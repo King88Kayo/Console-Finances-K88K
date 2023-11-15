@@ -14,6 +14,9 @@ You will need to track what the total change in profits is from month to month a
 The greatest increase in profits (date and amount) over the entire period.
 The greatest decrease in losses (date and amount) over the entire period
 
+# My Work
+
+Here is a link to the GitPages for this challenge: Console-Finances-K88K(https://king88kayo.github.io/Console-Finances-K88K/)
 
 # Resources
 
